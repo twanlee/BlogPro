@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit</title>
+</head>
+<th:block th:if="${message}">
+<p th:text="${message}"></p>
+</th:block>
+<body>
+<th:block th:object="${cate}">
+    <form th:action="@{/edit-cate}" method="post">
+        <input type="hidden" th:field="*{id}">
+        <input type="text" th:field="*{name}">
+        <button type="submit">Submit</button>
+    </form>
+</th:block>
+</body>
+</html>
